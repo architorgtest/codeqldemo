@@ -1,7 +1,7 @@
 
 pipeline {
 
-    agent any
+    agent {label 'Linux'}
  
 
     stages {
@@ -15,8 +15,8 @@ pipeline {
             steps {
                 cleanWs()
                     script{
-                sh "wget https://github.com/github/codeql-action/releases/latest/download/codeql-bundle-win64.tar.gz"
-                sh "tar xzvf codeql-bundle-win64.tar.gz"
+                sh "wget https://github.com/github/codeql-action/releases/latest/download/codeql-bundle-linux64.tar.gz"
+                sh "tar xzvf codeql-bundle-linux64.tar.gz"
                 //sh "del ..\codeql-bundle-win64.tar.gz"
                 //sh "cd ..\; set PATH=%cd%\codeql;%PATH%"
             }
