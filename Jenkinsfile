@@ -13,13 +13,16 @@ pipeline {
         // In this example, we download the latest CLI bundle (at time of writing) as part of the pipeline from https://github.com/github/codeql-action/releases.
         stage('Download CodeQL CLI Bundle') {
             steps {
+                cleanWs(){
+                    script{
                 sh "wget https://github.com/github/codeql-action/releases/latest/download/codeql-bundle-win64.tar.gz"
                 sh "tar xzvf codeql-bundle-win64.tar.gz"
                 //sh "del ..\codeql-bundle-win64.tar.gz"
                 //sh "cd ..\; set PATH=%cd%\codeql;%PATH%"
             }
         }
-
+            }
+        }
     }
 
 }
