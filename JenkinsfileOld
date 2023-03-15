@@ -12,10 +12,7 @@ pipeline {
     }
 
     stages {
-        // Clone repository
-        stage('Clone Repository') {
-            git url: 'https://github.com/testorgarchit/codeqldemo.git'
-        }    
+       
 
         // OPTIONAL: Download CodeQL CLI Bundle
         // The CodeQL bundle (containing the CodeQL CLI as well as the pre-compiled CodeQL Query Suites, which is recommended for CI/CD integration) can either be download as part of the pipeline,
