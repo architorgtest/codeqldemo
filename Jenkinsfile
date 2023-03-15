@@ -1,15 +1,8 @@
 
 pipeline {
 
-    agent { label 'run-codeql-analysis' }
-
-    environment {
-        ...
-    }
-
-    options {
-        ...
-    }
+    agent { label 'Windows' }
+ 
 
     stages {
        
