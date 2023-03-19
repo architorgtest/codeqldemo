@@ -1,8 +1,13 @@
+import hudson.model.*
+import groovy.transform.Field
 
 pipeline {
 
-    agent {label 'Linux'}
- 
+    agent {label 'Built-In Node'}
+    tools{
+    maven 'maven'
+    jdk 'jdk17'
+    }
 
     stages {
        
@@ -15,8 +20,8 @@ pipeline {
             steps {
                 cleanWs()
                     script{
-                sh "wget https://github.com/github/codeql-action/releases/latest/download/codeql-bundle-linux64.tar.gz"
-                sh "tar xzvf codeql-bundle-linux64.tar.gz"
+                sh "wget https://github.com/github/codeql-action/releases/latest/download/codeql-bundle-win64.tar.gz"
+                sh "tar xzvf codeql-bundle-win64.tar.gz"
                 //sh "del ..\codeql-bundle-win64.tar.gz"
                 //sh "cd ..\; set PATH=%cd%\codeql;%PATH%"
             }
